@@ -1,24 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Counter from './components/Counter';
+
+let students: string = "Abdul bari";
+console.log(students);
+
+const student: string[] = ["Akin", "sakib", "Momin", "Chy"];
+
+interface Person {
+   name: string,
+   job?: string | boolean,
+   salary: Number
+}
+
+const person: Person = {
+  name: "Iqbal",
+  job: "Bekar",
+  salary: 573475
+}
+
+const handleTypeFunc = (address: number, name: string, job: string):number => {
+  console.log(address, name, job)
+  const total: number = address + 100; 
+  return total
+}
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Counter />
     </div>
   );
 }
